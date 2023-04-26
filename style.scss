@@ -1,5 +1,13 @@
-body {
+@mixin rounded-borders() {
+  border-radius: 25px;
+}
+
+@mixin center-div() {
   justify-content: center;
+}
+
+body {
+  @include center-div();
   font-family: "Comic Sans MS", cursive, sans-serif;
   color: brown;
   flex-wrap: wrap;
@@ -10,14 +18,14 @@ body {
 }
 
 .image {
-  border-radius: 25px;
+  @include rounded-borders();
   width: 40vw;
   min-width: 350px;
   height: 300px;
 }
 
 .section {
-  border-radius: 25px;
+  @include rounded-borders();
   overflow-wrap: break-word;
   width: 45%;
   word-wrap: break-word;
@@ -40,10 +48,14 @@ body {
 .hop {
   display: block;
   position: absolute;
-  -webkit-animation: moveX 7s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
-  -moz-animation: moveX 7s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
-  -o-animation: moveX 7s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
-  animation: moveX 7s linear 0s infinite alternate, moveY 3.4s linear 0s infinite alternate;
+  -webkit-animation: moveX 7s linear 0s infinite alternate,
+    moveY 3.4s linear 0s infinite alternate;
+  -moz-animation: moveX 7s linear 0s infinite alternate,
+    moveY 3.4s linear 0s infinite alternate;
+  -o-animation: moveX 7s linear 0s infinite alternate,
+    moveY 3.4s linear 0s infinite alternate;
+  animation: moveX 7s linear 0s infinite alternate,
+    moveY 3.4s linear 0s infinite alternate;
 }
 
 @-webkit-keyframes moveX {
@@ -78,6 +90,7 @@ body {
     left: 100vw;
   }
 }
+
 @-webkit-keyframes moveY {
   from {
     top: 0;
@@ -110,5 +123,3 @@ body {
     top: 100vh;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
